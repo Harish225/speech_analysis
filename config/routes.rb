@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   resources :cities
   resources :speakers
   resources :phonemes
