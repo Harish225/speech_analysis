@@ -2,11 +2,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :base, required: true %>
-    <%= f.input :actual, required: true %>
-    <%= f.input :diacritic, required: true %>
-    <%= f.input :sequence, required: true %>
-    <%= f.association :speaker, required: true %>
+    <%= f.input :base, required: true, input_html: {class: "form-control"} %>
+    <%= f.input :actual, required: true, input_html: {class: "form-control"} %>
+    <%= f.input :diacritic, required: true, input_html: {class: "form-control"} %>
+    <%= f.input :sequence, required: true, input_html: {class: "form-control"} %>
+    <%= f.association :speaker, required: true, input_html: {class: "form-control"} %>
   </div>
 
   <div class="actions form-group">

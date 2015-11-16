@@ -48,6 +48,7 @@ Please fork and do a pull request when you've created a feature that you want to
 - [] Get UNM logo
 - [] Supplement Replace Speech App in upper left corner with UNM logo
 - [] Ensure Speaker is associated with a user
+- [] Ensure Phoneme is associated with a user
 - [] Create instructions for the students
 - [] Spec tests for ruby code
 - [] Spec tests for Javascript code

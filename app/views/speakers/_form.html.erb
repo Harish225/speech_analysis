@@ -2,18 +2,18 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name, required: true %>
-    <%= f.association :city, required: true %>
-    <%= f.association :state %>
-    <%= f.association :country, required: true %>
-    <%= f.association :native_language, required: true %>
-    <%= f.input :other_languages, label: '# Other Languages Known: ', required: true %>
-    <%= f.input :age, required: true %>
-    <%= f.input :gender, as: :select, collection: Speaker.genders.keys.to_a, required: true %>
-    <%= f.input :english_onset, required: true %>
-    <%= f.input :learning_method, as: :select, collection: Speaker.learning_methods.keys.to_a, required: true %>
-    <%= f.association :english_country_residence %>
-    <%= f.input :length_english_residence, required: true %>
+    <%= f.input :name, required: true, input_html: {class: "form-control"} %>
+    <%= f.association :city, required: true, input_html: {class: "form-control"} %>
+    <%= f.association :state, input_html: {class: "form-control"} %>
+    <%= f.association :country, required: true, input_html: {class: "form-control"} %>
+    <%= f.association :native_language, required: true, input_html: {class: "form-control"} %>
+    <%= f.input :other_languages, label: '# Other Languages Known: ', required: true, input_html: {class: "form-control"} %>
+    <%= f.input :age, required: true, input_html: {class: "form-control"} %>
+    <%= f.input :gender, as: :select, collection: Speaker.genders.keys.to_a, required: true, input_html: {class: "form-control"} %>
+    <%= f.input :english_onset, required: true, input_html: {class: "form-control"} %>
+    <%= f.input :learning_method, as: :select, collection: Speaker.learning_methods.keys.to_a, required: true, input_html: {class: "form-control"} %>
+    <%= f.association :english_country_residence, input_html: {class: "form-control"} %>
+    <%= f.input :length_english_residence, required: true, input_html: {class: "form-control"} %>
   </div>
 
   <div class="actions form-group">
