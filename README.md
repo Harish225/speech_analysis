@@ -66,7 +66,8 @@ Please fork and do a pull request when you've created a feature that you want to
 - [x] Add bootstrap to make interface easier to use
 - [x] Create seed data file with existing data provided by client
 - [x] Fix flash notices
-- [] Create model validations
+- [] Create model validations for Speakers
+- [] Create model validations for Phonemes
 - [x] Update Edit User page with bootstrap button
 - [] Get queries from client
 - [] Implement logic to separate views for different users

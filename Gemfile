@@ -41,8 +41,6 @@ end
 
 # Used for authentication
 gem 'devise'
-# Used for simple form
-gem 'simple_form'
 # Used for HAML
 gem 'haml'
 
@@ -50,3 +48,6 @@ gem 'haml'
 gem 'bootstrap-sass'
 # Used to ensure proper vendor prefixes to CSS code
 gem 'autoprefixer-rails'
+
+# Used for simple form
+gem 'simple_form'
