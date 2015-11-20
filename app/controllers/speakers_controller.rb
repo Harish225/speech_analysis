@@ -10,15 +10,21 @@ class SpeakersController < ApplicationController
   # GET /speakers/1
   # GET /speakers/1.json
   def show
+    @speaker = set_speaker
   end
 
   # GET /speakers/new
   def new
     @speaker = Speaker.new
+    @genders = Speaker.genders
+    @learning_methods = Speaker.learning_methods
   end
 
   # GET /speakers/1/edit
   def edit
+    @speaker = set_speaker
+    @genders = Speaker.genders
+    @learning_methods = Speaker.learning_methods
   end
 
   # POST /speakers

@@ -1,19 +1,102 @@
-<%= simple_form_for(@speaker) do |f| %>
-  <%= f.error_notification %>
+<%= form_for(@speaker) do |f| %>
+  <% if @speaker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@speaker.errors.count, "error") %> prohibited this speaker from being saved:</h2>
+
+      <ul>
+        <% @speaker.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="form-inputs">
-    <%= f.input :name, required: true, input_html: {class: "form-control"} %>
-    <%= f.association :city, required: true, input_html: {class: "form-control"} %>
-    <%= f.association :state, input_html: {class: "form-control"} %>
-    <%= f.association :country, required: true, input_html: {class: "form-control"} %>
-    <%= f.association :native_language, required: true, input_html: {class: "form-control"} %>
-    <%= f.input :other_languages, label: '# Other Languages Known: ', required: true, input_html: {class: "form-control"} %>
-    <%= f.input :age, required: true, input_html: {class: "form-control"} %>
-    <%= f.input :gender, as: :select, collection: Speaker.genders.keys.to_a, required: true, input_html: {class: "form-control"} %>
-    <%= f.input :english_onset, required: true, input_html: {class: "form-control"} %>
-    <%= f.input :learning_method, as: :select, collection: Speaker.learning_methods.keys.to_a, required: true, input_html: {class: "form-control"} %>
-    <%= f.association :english_country_residence, input_html: {class: "form-control"} %>
-    <%= f.input :length_english_residence, required: true, input_html: {class: "form-control"} %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, required: true, input_html: {class: 'form-control'} %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :city %><br>
+    <%= f.text_field :city_id, list: 'city', required: true %>
+    <datalist id="city_id">
+      <% City.all.each do |city| %>
+        <option value="<%= city.name %>"></option>
+      <% end %>
+    </datalist>
+  </div>
+
+
+  <div class="form-inputs">
+    <%= f.label :state %><br>
+    <%= f.text_field :state, list: 'state' %>
+    <datalist id="state">
+      <% State.all.each do |state| %>
+        <option value="<%= state.name %>"></option>
+      <% end %>
+    </datalist>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :country %><br>
+    <%= f.text_field :country, list: 'country', required: true %>
+    <datalist id="country">
+      <% Country.all.each do |country| %>
+        <option value="<%= country.name %>"></option>
+      <% end %>
+    </datalist>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :native_language %><br>
+    <%= f.text_field :native_language, list: 'native_language', required: true %>
+    <datalist id="native_language">
+      <% NativeLanguage.all.each do |nl| %>
+        <option value="<%= nl.name %>"></option>
+      <% end %>
+    </datalist>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label '# Other Languages Known' %><br>
+    <%= f.number_field :other_languages, required: true, input_html: {class: 'form-control'} %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label 'Age' %><br>
+    <%= f.number_field :age, required: true, input_html: {class: 'form-control'} %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :gender %> <br>
+    <%= f.select :gender, options_for_select(Speaker.genders.keys.to_a), require: true, input_html: {class:
+                                                                                                             "form-control"} %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label 'English Onset' %><br>
+    <%= f.number_field :english_onset, required: true, input_html: {class: 'form-control'} %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :learning_method %> <br>
+    <%= f.select :learning_method, options_for_select(Speaker.learning_methods.keys.to_a), require: true, input_html:
+                                                                                                    {class: "form-control"} %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :english_country_residence %><br>
+    <%= f.text_field :english_country_residence, list: 'english_country_residence' %>
+    <datalist id="english_country_residence">
+      <% EnglishCountryResidence.all.each do |ecr| %>
+        <option value="<%= ecr.name %>"></option>
+      <% end %>
+    </datalist>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label 'Length English Residence' %><br>
+    <%= f.number_field :length_english_residence, required: true, input_html: {class: 'form-control'} %>
   </div>
 
   <div class="actions form-group">
