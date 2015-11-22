@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.2.3'
 
+# Used for autocomplete
+gem 'rails4-autocomplete'
+# jQuery UI dependency for autocomplete
+gem 'jquery-ui-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
