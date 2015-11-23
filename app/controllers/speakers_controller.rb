@@ -1,30 +1,53 @@
 class SpeakersController < ApplicationController
   before_action :set_speaker, only: [:show, :edit, :update, :destroy]
+  autocomplete :city, :name, :full => true
+  autocomplete :state, :name, :full => true
+  autocomplete :country, :name, :full => true
+  autocomplete :native_language, :name, :full => true
+  autocomplete :english_country_residence, :name, :full => true
 
   # GET /speakers
   # GET /speakers.json
   def index
     @speakers = Speaker.all
+    if params[:search]
+      @city = City.name_like("%#{params[:search]}%").order('name')
+    else
+    end
+
+    if params[:search]
+      @state = State.name_like("%#{params[:search]}%").order('name')
+    else
+    end
+
+    if params[:search]
+      @country = Country.name_like("%#{params[:search]}%").order('name')
+    else
+    end
+
+    if params[:search]
+      @native_language = NativeLanguage.name_like("%#{params[:search]}%").order('name')
+    else
+    end
+
+    if params[:search]
+      @english_country_residence = EnglishCountryResidence.name_like("%#{params[:search]}%").order('name')
+    else
+    end
   end
 
   # GET /speakers/1
   # GET /speakers/1.json
   def show
-    @speaker = set_speaker
   end
 
   # GET /speakers/new
   def new
     @speaker = Speaker.new
-    @genders = Speaker.genders
-    @learning_methods = Speaker.learning_methods
   end
 
   # GET /speakers/1/edit
   def edit
-    @speaker = set_speaker
-    @genders = Speaker.genders
-    @learning_methods = Speaker.learning_methods
   end
 
   # POST /speakers
@@ -73,13 +96,16 @@ class SpeakersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_speaker
-      @speaker = Speaker.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_speaker
+    @speaker = Speaker.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def speaker_params
-      params.require(:speaker).permit(:name, :city_id, :state_id, :country_id, :native_language_id, :other_languages, :age, :gender, :english_onset, :learning_method, :english_country_residence_id, :length_english_residence, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def speaker_params
+    params.require(:speaker).permit(:name, :city_id, :state_id, :country_id, :native_language_id, :other_languages,
+                                    :age, :gender, :english_onset, :learning_method, :english_country_residence_id,
+                                    :length_english_residence, :user_id, :city_name, :state_name, :country_name,
+                                    :native_language_name, :english_country_residence_name)
+  end
 end

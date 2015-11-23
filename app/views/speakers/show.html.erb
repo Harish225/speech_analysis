@@ -12,7 +12,7 @@
 
 <p>
   <strong>State:</strong>
-  <%= @speaker.state.name %>
+  <%= @speaker.state.name if !@speaker.state.nil? %>
 </p>
 
 <p>
@@ -50,12 +50,10 @@
   <%= @speaker.learning_method %>
 </p>
 
-<% if !@speaker.english_country_residence.nil? %>
-  <p>
-    <strong>English country residence:</strong>
-    <%= @speaker.english_country_residence.name %>
-  </p>
-<% end %>
+<p>
+  <strong>English country residence:</strong>
+  <%= @speaker.english_country_residence.name if !@speaker.english_country_residence.nil? %>
+</p>
 
 <p>
   <strong>Length english residence:</strong>

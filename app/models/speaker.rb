@@ -7,10 +7,61 @@ class Speaker < ActiveRecord::Base
   belongs_to :state
   belongs_to :country
   belongs_to :native_language
+  belongs_to :english_country_residence
   validates :gender, inclusion: {in: SPEAKER_GENDERS.map { |sg| sg.to_s }}
   validates :learning_method, inclusion: {in: LEARNING_METHODS.map { |l| l.to_s }}
-  belongs_to :english_country_residence
   belongs_to :user
   validates_presence_of :name, :city, :country, :native_language, :other_languages, :age, :gender, :english_onset,
                         :learning_method, :length_english_residence
+  has_many :phonemes, dependent: :destroy
+
+  # City getter
+  def city_name
+    city.try(:name)
+  end
+
+  # City setter
+  def city_name=(name)
+    self.city = City.find_or_create_by(name: name) if name.present?
+  end
+
+  # State getter
+  def state_name
+    state.try(:name)
+  end
+
+  # State setter
+  def state_name=(name)
+    self.state = State.find_or_create_by(name: name) if name.present?
+  end
+
+  # Country getter
+  def country_name
+    country.try(:name)
+  end
+
+  # Country setter
+  def country_name=(name)
+    self.country = Country.find_or_create_by(name: name) if name.present?
+  end
+
+  # Native Language getter
+  def native_language_name
+    native_language.try(:name)
+  end
+
+  # Native Language setter
+  def native_language_name=(name)
+    self.native_language = NativeLanguage.find_or_create_by(name: name) if name.present?
+  end
+
+  # English Country Residence getter
+  def english_country_residence_name
+    english_country_residence.try(:name)
+  end
+
+  # English Country Residence setter
+  def english_country_residence_name=(name)
+    self.english_country_residence = EnglishCountryResidence.find_or_create_by(name: name) if name.present?
+  end
 end

@@ -31,7 +31,7 @@
     <tr>
       <td><%= speaker.name %></td>
       <td><%= speaker.city.name %></td>
-      <td><%= speaker.state.name %></td>
+      <td><%= speaker.state.name if !speaker.state.nil? %></td>
       <td><%= speaker.country.name %></td>
       <td><%= speaker.native_language.name %></td>
       <td><%= speaker.other_languages %></td>
@@ -39,11 +39,7 @@
       <td><%= speaker.gender %></td>
       <td><%= speaker.english_onset %></td>
       <td><%= speaker.learning_method %></td>
-      <% if !speaker.english_country_residence.nil? %>
-        <td><%= speaker.english_country_residence.name %></td>
-      <% else %>
-        <td><%= nil %></td>
-      <% end %>
+      <td><%= speaker.english_country_residence.name if !speaker.english_country_residence.nil? %></td>
       <td><%= speaker.length_english_residence %></td>
       <td><%= link_to 'Show', speaker, class: 'btn btn-primary btn-xs' %></td>
       <td><%= link_to 'Edit', edit_speaker_path(speaker), class: 'btn btn-info btn-xs' %></td>

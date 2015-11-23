@@ -1,18 +1,22 @@
 Rails.application.routes.draw do
 
+  get 'speakers/autocomplete_city_name'
+  get 'speakers/autocomplete_state_name'
+  get 'speakers/autocomplete_country_name'
+  get 'speakers/autocomplete_native_language_name'
+  get 'speakers/autocomplete_english_country_residence_name'
+
   devise_for :admins
   resources :cities
+  resources :states
+  resources :countries
   resources :speakers
   resources :phonemes
   resources :english_country_residences
   resources :native_languages
-  resources :countries
-  resources :states
-  resources :cities
-  resources :speakers
+
   devise_for :users
   get 'login/index'
-  resources :home
 
   devise_scope :user do
     authenticated :user do
