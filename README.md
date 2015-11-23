@@ -56,9 +56,9 @@ Please fork and do a pull request when you've created a feature that you want to
 - [x] Create model validations for Phonemes
 - [x] Update Edit User page with bootstrap button
 - [x] Ensure instructions for coding side are up-to-date
-- [] Determine way to create new options to add to drop down boxes (ex. state, country, etc.)
+- [x] Determine way to create new options to add to drop down boxes (ex. state, country, etc.)
 - [] Ensure Speaker is associated with a user
-- [] Ensure Phoneme is associated with a user
+- [x] Ensure Phoneme is associated with a speaker
 - [] Spec tests for ruby code
 - [] Ensure no TODO's remain in code comments
 - [] Remove unnecessary components to project
@@ -99,8 +99,7 @@ Please fork and do a pull request when you've created a feature that you want to
 - [x] Get UNM logo from Nicole
 - [x] Steal UNM favicon
 - [x] Supplement Replace Speech App in upper left corner with UNM logo
-- [] Redirect from logo 
-- [] Create unit tests for frontend work
+- [x] Redirect from logo 
 - [] Implement concept of administrative account
 - [] Implement logic to separate views for different users
 
