@@ -8,8 +8,6 @@ gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -41,17 +39,23 @@ group :development do
 
     # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
     gem 'spring'
+
+    gem 'sqlite3'
 end
 
 # Used for authentication
 gem 'devise'
 # Used for HAML
 gem 'haml'
-
 # Used for bootstrap
 gem 'bootstrap-sass'
 # Used to ensure proper vendor prefixes to CSS code
 gem 'autoprefixer-rails'
-
 # Used for simple form
 gem 'simple_form'
+
+# For Heroku
+group :production do
+    gem 'pg'
+    gem 'rails_12factor'
+end
