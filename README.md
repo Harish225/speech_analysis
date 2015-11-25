@@ -11,6 +11,10 @@ Final assignment for Web Architecture and Cloud Computing class at UNM (ECE 495/
 * Nicole Kim (nkim0912@salud.unm.edu)
 * Meghana Sampelli (meghana.sampelli2811@gmail.com).
 
+
+## Heroku Site
+The heroku site can be found at: https://sheltered-anchorage-4143.herokuapp.com/
+
 ## Instructions
 
 Clone the repo:
@@ -62,7 +66,7 @@ Please fork and do a pull request when you've created a feature that you want to
 - [] Spec tests for ruby code
 - [] Ensure no TODO's remain in code comments
 - [] Remove unnecessary components to project
-- [] Push product to Heroku
+- [x] Push product to Heroku
 
 #### Amber:
 - [] Create interface for inputting Phoneme Data - Due Nov 20 - 21st at the latest
