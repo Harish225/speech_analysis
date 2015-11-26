@@ -61,49 +61,38 @@ Please fork and do a pull request when you've created a feature that you want to
 - [x] Update Edit User page with bootstrap button
 - [x] Ensure instructions for coding side are up-to-date
 - [x] Determine way to create new options to add to drop down boxes (ex. state, country, etc.)
-- [] Ensure Speaker is associated with a user
+- [x] Ensure Speaker is associated with a user
 - [x] Ensure Phoneme is associated with a speaker
-- [] Spec tests for ruby code
 - [] Ensure no TODO's remain in code comments
 - [] Remove unnecessary components to project
 - [x] Push product to Heroku
+- [x] Assist Amber in adding phonemes to seed data 
+- [] Create form for Phonemes
+- [x] Stop dropdowns in Speaker from accepting negative numbers
 
 #### Amber:
-- [] Create interface for inputting Phoneme Data - Due Nov 20 - 21st at the latest
-- [] Ensure input file is being displayed properly - Due Nov 20 - 21st at the latest
-- [] Grab Phoneme image and display - Due Nov 20 - 21st at the latest
-- [] Display table for phoneme translations - Due Nov 20 - 21st at the latest
-- [] Implement query functionality
-- [] Ensure aesthetics of page are good
-- [] Create nice page for login/signup - see https://stark-woodland-7238.herokuapp.com/ for contextual example
-- [] Remove unnecessary components to project
-- [] Spec tests for Javascript code
+- [x] Help initial prototype for seed data
+- [] Presentation
 
 #### Jeffrey:
-- [] Create interface for inputting Phoneme Data - Due Nov 20 - 21st at the latest
+- [] Add validations and parsing to Phonemes form
 - [] Ensure input file is being displayed properly - Due Nov 20 - 21st at the latest
-- [] Grab Phoneme image and display - Due Nov 20 - 21st at the latest
-- [] Display table for phoneme translations - Due Nov 20 - 21st at the latest
-- [] Implement query functionality
 - [] Ensure aesthetics of page are good
 - [] Create nice page for login/signup - see https://stark-woodland-7238.herokuapp.com/ for contextual example
-- [] Remove unnecessary components to project
-- [] Spec tests for Javascript code
 
 #### Nicole:
-- [] Ensure aesthetics of page are good
+- [] Help subgroups with understanding their roles
+- [] Presentation
 - [] QA on web application
-- [] Implement query functionality
 - [] Create instructions for the students
-- [] Create nice page for login/signup - see https://stark-woodland-7238.herokuapp.com/ for contextual example
-- [] Remove unnecessary components to project
-- [] Spec tests for Javascript code
 
 #### Harish:
 - [x] Get UNM logo from Nicole
 - [x] Steal UNM favicon
 - [x] Supplement Replace Speech App in upper left corner with UNM logo
 - [x] Redirect from logo 
+- [] Implement query functionality
+- [] Create query page
 - [] Implement concept of administrative account
 - [] Implement logic to separate views for different users
 
