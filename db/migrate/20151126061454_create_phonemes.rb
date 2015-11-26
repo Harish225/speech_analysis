@@ -1,7 +1,7 @@
 class CreatePhonemes < ActiveRecord::Migration
   def change
     create_table :phonemes do |t|
-      t.integer :base
+      t.string :base
       t.string :actual
       t.string :diacritic
       t.integer :sequence

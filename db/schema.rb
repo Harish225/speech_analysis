@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116034448) do
+ActiveRecord::Schema.define(version: 20151126061454) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20151116034448) do
   end
 
   create_table "phonemes", force: :cascade do |t|
-    t.integer  "base"
+    t.string   "base"
     t.string   "actual"
     t.string   "diacritic"
     t.integer  "sequence"
