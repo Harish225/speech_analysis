@@ -66,6 +66,24 @@ class PhonemesController < ApplicationController
     end
   end
 
+  def query
+
+    # if !params[:base].blank?
+    #   @results = Phoneme.where(["base LIKE ?", "%#{params[:base]}%"])
+    # end
+
+    # if !params[:speaker].blank?
+    #   speaker_id = Speaker.find_by_name(params[:speaker]).id
+    # end
+
+    @results = nil
+    if !params[:base].blank? or !params[:actual].blank? or !params[:diacritic].blank? or !params[:speaker].blank?
+      @results = Phoneme.where(["base LIKE ? OR :actual LIKE ? OR :diacritic LIKE ? OR :speaker LIKE ?",
+                                "%#{params[:base]}%", "%#{params[:actual]}%", "%#{params[:diacritic]}%", "%#{params[:speaker]}%"])
+      puts @results.as_json
+    end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_phoneme

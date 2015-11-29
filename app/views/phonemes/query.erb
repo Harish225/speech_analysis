@@ -1,0 +1,49 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'View Phoneme Data', phonemes_path %></li>
+  <li><%= link_to 'Enter Phoneme Data', new_phoneme_path %></li>
+  <li><%= link_to 'View Speakers', speakers_path %></li>
+  <li><%= link_to 'Create Speaker', new_speaker_path %></li>
+  <li class="active"><%= link_to 'Query Data', phonemes_input_query_path %></li>
+</ul>
+
+
+<h1>Query Data</h1>
+
+<%= form_tag phonemes_input_query_path, :method => 'get' do %>
+
+    <div class="form-inputs">
+      <%= text_field_tag :base, params[:base] %>
+      <%# collection_select :phoneme_id, Phoneme.all, :params[:base], :name, prompt: true %>
+      <%= text_field_tag :actual, params[:actual] %>
+      <%= text_field_tag :diacritic, params[:diacritic] %>
+      <%= text_field_tag :speaker, params[:speaker] %>
+      <%= submit_tag "Search", :name => nil %>
+    </div>
+
+<% end %>
+
+<% if @results.present? %>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Base</th>
+        <th>Actual</th>
+        <th>Diacritic</th>
+        <th>Speaker</th>
+        <th>Native Language</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @results.each do |result| %>
+          <tr>
+            <td><%= result.base %></td>
+            <td><%= result.actual %></td>
+            <td><%= result.diacritic %></td>
+            <td><%= result.speaker.name %></td>
+            <td><%= result.speaker.native_language.name %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>
