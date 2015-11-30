@@ -67,15 +67,18 @@ Please fork and do a pull request when you've created a feature that you want to
 - [] Remove unnecessary components to project
 - [x] Push product to Heroku
 - [x] Assist Amber in adding phonemes to seed data 
-- [] Create form for Phonemes
+- [x] Create form for Phonemes
 - [x] Stop dropdowns in Speaker from accepting negative numbers
+- [x] Implement way to read text file and display to phonemes view
+- [] Add ability to instantiate multiple objects of phoneme and submit to db
+- [] Add validations and parsing to Phonemes form
 
 #### Amber:
 - [x] Help initial prototype for seed data
+- [] Add ability to instantiate multiple objects of phoneme and submit to db
 - [] Presentation
 
 #### Jeffrey:
-- [] Add validations and parsing to Phonemes form
 - [] Ensure input file is being displayed properly - Due Nov 20 - 21st at the latest
 - [] Ensure aesthetics of page are good
 - [] Create nice page for login/signup - see https://stark-woodland-7238.herokuapp.com/ for contextual example
