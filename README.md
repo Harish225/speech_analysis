@@ -44,7 +44,7 @@ Please fork and do a pull request when you've created a feature that you want to
 - [x] Initial Requirements Document - Due: Nov 12
 - [x] Gantt Chart - Due: Nov 12
 - [x] Initial prototype - Due: Nov 17
-- [] Prototype 2 - Due: Nov 24
+- [x] Prototype 2 - Due: Nov 24
 - [] Prototype 3 - Due: Dec 1
 - [] Final Presentation - Due: Dec 8-10
 
