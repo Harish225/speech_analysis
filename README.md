@@ -63,15 +63,16 @@ Please fork and do a pull request when you've created a feature that you want to
 - [x] Determine way to create new options to add to drop down boxes (ex. state, country, etc.)
 - [x] Ensure Speaker is associated with a user
 - [x] Ensure Phoneme is associated with a speaker
-- [] Ensure no TODO's remain in code comments
+- [x] Ensure no TODO's remain in code comments
 - [] Remove unnecessary components to project
 - [x] Push product to Heroku
 - [x] Assist Amber in adding phonemes to seed data 
 - [x] Create form for Phonemes
 - [x] Stop dropdowns in Speaker from accepting negative numbers
 - [x] Implement way to read text file and display to phonemes view
+- [x] Add validations and parsing to Phonemes form
+- [x] Implement functionality in edit for validations and parsing for Phonemes
 - [] Add ability to instantiate multiple objects of phoneme and submit to db
-- [] Add validations and parsing to Phonemes form
 
 #### Amber:
 - [x] Help initial prototype for seed data

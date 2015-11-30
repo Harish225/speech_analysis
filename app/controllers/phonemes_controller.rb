@@ -25,9 +25,10 @@ class PhonemesController < ApplicationController
   # POST /phonemes.json
   def create
     @phoneme = Phoneme.new(phoneme_params)
-
+    valid_input = compare_commas(@phoneme.base, @phoneme.actual)
+    @phoneme.diacritic = get_diacritics(@phoneme.base)
     respond_to do |format|
-      if @phoneme.save
+      if @phoneme.save && valid_input
         flash[:success] = 'Phoneme was successfully created.'
         format.html { redirect_to @phoneme }
         format.json { render :show, status: :created, location: @phoneme }
@@ -42,8 +43,11 @@ class PhonemesController < ApplicationController
   # PATCH/PUT /phonemes/1
   # PATCH/PUT /phonemes/1.json
   def update
+    @phoneme = Phoneme.new(phoneme_params)
+    valid_input = compare_commas(@phoneme.base, @phoneme.actual)
+    @phoneme.diacritic = get_diacritics(@phoneme.base)
     respond_to do |format|
-      if @phoneme.update(phoneme_params)
+      if @phoneme.update(phoneme_params) && valid_input
         flash[:success] = 'Phoneme was successfully updated.'
         format.html { redirect_to @phoneme }
         format.json { render :show, status: :ok, location: @phoneme }

@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="form-inputs">
-    <%= f.label :name %><br />
+    <%= f.label :name %><br>
     <%= f.text_field :name, required: true, input_html: {class: 'form-control'} %>
   </div>
 
@@ -61,7 +61,7 @@
     <%= f.label :learning_method %> <br>
     <%= f.select :learning_method, options_for_select(Speaker.learning_methods.keys.to_a), require: true, input_html:
                                                                                                     {class:
-                                                                                                             "form-control"}  %>
+                                                                                                             "form-control"} %>
   </div>
 
   <div class="form-inputs">
@@ -78,6 +78,4 @@
   <div class="actions form-group">
     <%= f.submit %>
   </div>
-  <!--TODO: Figure out how to make submit button look like this button:-->
-  <!--<%= button_tag "Create Speaker", type: 'submit', class: "btn btn-success" %>-->
 <% end %>
