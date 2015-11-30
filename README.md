@@ -75,7 +75,7 @@ Please fork and do a pull request when you've created a feature that you want to
 - [] Add ability to instantiate multiple objects of phoneme and submit to db
 
 #### Amber:
-- [x] Help initial prototype for seed data
+- [x] Help build initial prototype for seed data
 - [] Add ability to instantiate multiple objects of phoneme and submit to db
 - [] Presentation
 

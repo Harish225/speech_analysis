@@ -14,7 +14,10 @@ class PhonemesController < ApplicationController
 
   # GET /phonemes/new
   def new
-    @phoneme = Phoneme.new
+    @phoneme_array = []
+    2.times do
+      @phoneme_array << Phoneme.new
+    end
   end
 
   # GET /phonemes/1/edit
@@ -24,27 +27,44 @@ class PhonemesController < ApplicationController
   # POST /phonemes
   # POST /phonemes.json
   def create
-    @phoneme = Phoneme.new(phoneme_params)
-    valid_input = compare_commas(@phoneme.base, @phoneme.actual)
-    @phoneme.diacritic = get_diacritics(@phoneme.base)
-    respond_to do |format|
-      if @phoneme.save && valid_input
-        flash[:success] = 'Phoneme was successfully created.'
-        format.html { redirect_to @phoneme }
-        format.json { render :show, status: :created, location: @phoneme }
-      else
-        flash[:danger] = 'There was a problem creating the Phoneme.'
-        format.html { render :new }
-        format.json { render json: @phoneme.errors, status: :unprocessable_entity }
+    # @phoneme           = Phoneme.new(phoneme_params)
+    params["phonemes"].each do |phoneme|
+      if phoneme["base"] != "" || phoneme["actual"] != "" || phoneme["sequence"] != ""
+        @phoneme = Phoneme.new(phoneme_params(phoneme))
+        # valid_input        = compare_commas(@phoneme.base, @phoneme.actual)
+        # @phoneme.diacritic = get_diacritics(@phoneme.base)
+
+        # TODO: Implement respond_to
+
+        # if Phoneme.create(phoneme_params(phoneme))
+          flash[:success] = 'Phoneme was successfully created.'
+          format.html { redirect_to phonemes_url }
+          format.json { head :no_content }
+          # format.json { render :show, status: :created, location: @phoneme }
+        end
       end
     end
+    # valid_input        = compare_commas(@phoneme.base, @phoneme.actual)
+    # @phoneme.diacritic = get_diacritics(@phoneme.base)
+    # respond_to do |format|
+    #   if @phoneme.save && valid_input
+    #     flash[:success] = 'Phoneme was successfully created.'
+    #     format.html { redirect_to @phoneme }
+    #     format.json { render :show, status: :created, location: @phoneme }
+    #   else
+    #     flash[:danger] = 'There was a problem creating the Phoneme.'
+    #     format.html { render :new }
+    #     format.json { render json: @phoneme.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /phonemes/1
   # PATCH/PUT /phonemes/1.json
   def update
-    @phoneme = Phoneme.new(phoneme_params)
-    valid_input = compare_commas(@phoneme.base, @phoneme.actual)
+    # TODO: fix this to work with multiple items to update
+    @phoneme           = Phoneme.new(phoneme_params)
+    valid_input        = compare_commas(@phoneme.base, @phoneme.actual)
     @phoneme.diacritic = get_diacritics(@phoneme.base)
     respond_to do |format|
       if @phoneme.update(phoneme_params) && valid_input
@@ -80,4 +100,9 @@ class PhonemesController < ApplicationController
   def phoneme_params
     params.require(:phoneme).permit(:base, :actual, :diacritic, :sequence, :speaker_id)
   end
+
+  def phoneme_params(my_params)
+    my_params.permit(:base, :actual, :sequence)
+  end
+
 end
