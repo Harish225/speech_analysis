@@ -2,21 +2,29 @@
 
   <% text_array = split_text_on_space('app/assets/paragraph.txt') %>
   <% remove_punctuation(text_array) %>
-<!--TODO: Implement speaker dropdown here-->
+
+  <div class="form-inputs">
+    <%= label_tag :speaker %> <br>
+    <%= collection_select :speaker, :speaker_id, Speaker.order(:name), :id, :name %> <br>
+    <% speaker = "hi" %>
+  </div>
+
   <% @phoneme_array.each do |phoneme| %>
     <%= fields_for 'phonemes[]', phoneme do |p| %>
-
       <div class="field">
-      <%= p.label :base %> <br>
-      <%= p.text_field :base, required: true, input_html: {class: "form-control"} %> <br>
+        <%= p.label :base %> <br>
+        <%= p.text_field :base, required: true, input_html: {class: "form-control"} %> <br>
       </div>
       <div class="field">
-      <%= p.label :actual %> <br>
-      <%= p.text_field :actual, required: true, input_html: {class: "form-control"} %> <br>
+        <%= p.label :actual %> <br>
+        <%= p.text_field :actual, required: true, input_html: {class: "form-control"} %> <br>
       </div>
       <div class="field">
-      <%= p.label :sequence %> <br>
-      <%= p.text_field :sequence, required: true, input_html: {class: "form-control"} %> <br>
+        <%= p.label :sequence %> <br>
+        <%= p.text_field :sequence, required: true, input_html: {class: "form-control"} %> <br>
+      </div>
+      <div class="field">
+        <%= p.hidden_field :speaker, :value => speaker %>
       </div>
     <% end %>
   <% end %>

@@ -72,7 +72,10 @@ Please fork and do a pull request when you've created a feature that you want to
 - [x] Implement way to read text file and display to phonemes view
 - [x] Add validations and parsing to Phonemes form
 - [x] Implement functionality in edit for validations and parsing for Phonemes
-- [] Add ability to instantiate multiple objects of phoneme and submit to db
+- [x] Add ability to instantiate multiple objects of phoneme and submit to db
+- [x] Fix edit form to work with new controller code
+- [] Add speaker dropdown back in for new view
+- [] Create custom validations for comma checks on view
 
 #### Amber:
 - [x] Help build initial prototype for seed data

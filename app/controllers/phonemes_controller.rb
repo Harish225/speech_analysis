@@ -14,7 +14,8 @@ class PhonemesController < ApplicationController
 
   # GET /phonemes/new
   def new
-    @phoneme_array = create_phoneme_array
+    @phoneme       = Phoneme.new
+    @phoneme_array = create_phoneme_array(2)
   end
 
   # GET /phonemes/1/edit
@@ -44,7 +45,7 @@ class PhonemesController < ApplicationController
       redirect_to phonemes_path
     else
       flash[:danger] = 'There was a problem creating the Phoneme.'
-      @phoneme_array = create_phoneme_array
+      @phoneme_array = create_phoneme_array(2)
       respond_to do |format|
         format.html { render :new }
         format.json { render json: @phoneme.errors, status: :unprocessable_entity }
@@ -55,12 +56,11 @@ class PhonemesController < ApplicationController
   # PATCH/PUT /phonemes/1
   # PATCH/PUT /phonemes/1.json
   def update
-    # TODO: fix this to work with multiple items to update
-    @phoneme           = Phoneme.new(phoneme_params)
+    @phoneme           = Phoneme.new(phoneme_parameters)
     valid_input        = compare_commas(@phoneme.base, @phoneme.actual)
     @phoneme.diacritic = get_diacritics(@phoneme.base)
     respond_to do |format|
-      if @phoneme.update(phoneme_params) && valid_input
+      if @phoneme.update(phoneme_parameters) && valid_input
         flash[:success] = 'Phoneme was successfully updated.'
         format.html { redirect_to @phoneme }
         format.json { render :show, status: :ok, location: @phoneme }
@@ -90,12 +90,11 @@ class PhonemesController < ApplicationController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def phoneme_params
+  def phoneme_parameters
     params.require(:phoneme).permit(:base, :actual, :diacritic, :sequence, :speaker_id)
   end
 
   def phoneme_params(my_params)
-    my_params.permit(:base, :actual, :sequence)
+    my_params.permit(:base, :actual, :sequence, :speaker_id)
   end
-
 end
