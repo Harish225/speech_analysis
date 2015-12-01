@@ -3,6 +3,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  def create_phoneme_array
+    phoneme_array = []
+    2.times do
+      phoneme_array << Phoneme.new
+    end
+    return phoneme_array
+  end
+
   #TODO: Maybe remove this
   def create
     if params.has_key?("phoneme")
