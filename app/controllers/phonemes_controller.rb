@@ -78,8 +78,10 @@ class PhonemesController < ApplicationController
 
     @results = nil
     if !params[:base].blank? or !params[:actual].blank? or !params[:diacritic].blank? or !params[:speaker].blank?
-      @results = Phoneme.where(["base LIKE ? OR :actual LIKE ? OR :diacritic LIKE ? OR :speaker LIKE ?",
-                                "%#{params[:base]}%", "%#{params[:actual]}%", "%#{params[:diacritic]}%", "%#{params[:speaker]}%"])
+      @results = Phoneme.where("base LIKE ? OR actual LIKE ? OR diacritic LIKE ? OR speaker_id LIKE ?",
+                               "#{params[:base]}", "#{params[:actual]}", "#{params[:diacritic]}", "#{params[:speaker]}")
+       # @results = Phoneme.where("base LIKE ? OR actual LIKE ? OR diacritic LIKE ? OR speaker_id LIKE ?",
+       #                          "%#{params[:base]}%", "%#{params[:actual]}%", "%#{params[:diacritic]}%", "%#{params[:speaker]}%")
       puts @results.as_json
     end
   end
