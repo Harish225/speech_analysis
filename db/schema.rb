@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126061454) do
+ActiveRecord::Schema.define(version: 20151202070745) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -66,6 +66,14 @@ ActiveRecord::Schema.define(version: 20151126061454) do
   end
 
   add_index "phonemes", ["speaker_id"], name: "index_phonemes_on_speaker_id"
+
+  create_table "search_views", id: false, force: :cascade do |t|
+    t.string  "BASE"
+    t.string  "ACTUAL"
+    t.string  "DIACRITIC"
+    t.integer "SPEAKER_ID"
+    t.string  "NATIVE_LANGUAGE"
+  end
 
   create_table "speakers", force: :cascade do |t|
     t.string   "name"

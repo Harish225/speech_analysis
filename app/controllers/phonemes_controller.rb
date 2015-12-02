@@ -68,21 +68,8 @@ class PhonemesController < ApplicationController
 
   def query
 
-    # if !params[:base].blank?
-    #   @results = Phoneme.where(["base LIKE ?", "%#{params[:base]}%"])
-    # end
-
-    # if !params[:speaker].blank?
-    #   speaker_id = Speaker.find_by_name(params[:speaker]).id
-    # end
-
-    @results = nil
-    if !params[:base].blank? or !params[:actual].blank? or !params[:diacritic].blank? or !params[:speaker].blank?
-      @results = Phoneme.where("base LIKE ? OR actual LIKE ? OR diacritic LIKE ? OR speaker_id LIKE ?",
-                               "#{params[:base]}", "#{params[:actual]}", "#{params[:diacritic]}", "#{params[:speaker]}")
-       # @results = Phoneme.where("base LIKE ? OR actual LIKE ? OR diacritic LIKE ? OR speaker_id LIKE ?",
-       #                          "%#{params[:base]}%", "%#{params[:actual]}%", "%#{params[:diacritic]}%", "%#{params[:speaker]}%")
-      puts @results.as_json
+    if !:base.blank? or !params[:actual].blank? or !params[:diacritic].blank? or !params[:speaker].blank?  or !params[:native_language].blank?
+      @results = SearchView.new(base: params[:base],actual: params[:actual],diacritic: params[:diacritic],speaker:params[:speaker],native_language: params[:native_language]).results
     end
   end
 
