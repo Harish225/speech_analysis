@@ -1,33 +1,34 @@
-<%= form_for @phoneme do |f| %>
-  <% if @phoneme.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@phoneme.errors.count, "error") %> prohibited this speaker from being saved:</h2>
-
-      <ul>
-        <% @phoneme.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="form-inputs">
-    <%= f.label :speaker %> <br>
-    <%= f.collection_select :speaker_id, Speaker.order(:name), :id, :name %>
-  </div>
+<%= form_tag phonemes_path do %>
 
   <% text_array = split_text_on_space('app/assets/paragraph.txt') %>
   <% remove_punctuation(text_array) %>
 
-    <div class="form-inputs">
-      <%= f.label :base %> <br>
-      <%= f.text_field :base, required: true, input_html: {class: "form-control"} %> <br>
-      <%= f.label :actual %> <br>
-      <%= f.text_field :actual, required: true, input_html: {class: "form-control"} %> <br>
-      <%= f.label :sequence %> <br>
-      <%= f.text_field :sequence, required: true, input_html: {class: "form-control"} %> <br>
-    </div>
+  <div class="form-inputs">
+    <%= label_tag :speaker %> <br>
+    <%= collection_select :speaker, :speaker_id, Speaker.order(:name), :id, :name %> <br>
+    <% speaker = "hi" %>
+  </div>
 
-  <div class="actions form-group">
-    <%= f.submit %>
+  <% @phoneme_array.each do |phoneme| %>
+    <%= fields_for 'phonemes[]', phoneme do |p| %>
+      <div class="field">
+        <%= p.label :base %> <br>
+        <%= p.text_field :base, required: true, input_html: {class: "form-control"} %> <br>
+      </div>
+      <div class="field">
+        <%= p.label :actual %> <br>
+        <%= p.text_field :actual, required: true, input_html: {class: "form-control"} %> <br>
+      </div>
+      <div class="field">
+        <%= p.label :sequence %> <br>
+        <%= p.text_field :sequence, required: true, input_html: {class: "form-control"} %> <br>
+      </div>
+      <div class="field">
+        <%= p.hidden_field :speaker, :value => speaker %>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="actions">
+    <%= submit_tag %>
   </div>
 <% end %>

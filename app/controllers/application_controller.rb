@@ -3,6 +3,15 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # Used to create a phonemes array of size n
+  def create_phoneme_array(n)
+    phoneme_array = []
+    n.times do
+      phoneme_array << Phoneme.new
+    end
+    return phoneme_array
+  end
+
   # Compare base and actual diacritics to determine if the number of commas match
   def compare_commas(base, actual)
     bc = base.count(',')
