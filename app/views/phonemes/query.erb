@@ -63,7 +63,7 @@
       <% end %>
       </tbody>
     </table>
-<% else %>
-  <br>
-  <strong>* No records found.</strong>
+<% end %>
+<% if !@results.present? && @flag == "n" %>
+    <strong>* No records found.</strong>
 <% end %>
