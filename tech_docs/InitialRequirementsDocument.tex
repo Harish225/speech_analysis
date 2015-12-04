@@ -29,9 +29,6 @@
   Rutherford, Amber \\
   \texttt{anhruthe@gmail.com}  
   \and
-  Sampelli, Meghana \\
-  \texttt{meghana.sampelli2811@gmail.com}
-  \and
   Kim, Nicole \\
   \texttt{nkim0912@salud.unm.edu}
   \and
@@ -49,7 +46,7 @@
 \pagenumbering{arabic}
 
 \section*{Problem Statement}
-Our team will create an application that enables a user to associate a speaker with the phonemes they spoke when reading through a prescribed paragraph. These speakers will in turn be associated with users that manually input the phoneme information as it corresponds to letters or clusters of letters. \\
+Our team will create an application that enables a user to associate a speaker with phonemes that they speak when reading through a prescribed paragraph. These speakers will in turn be associated with users that manually input the phoneme information as it corresponds to letters or clusters of letters. \\
 
 Once data has been entered, our client will be able to run relevant queries on the input data to enumerate relationships that are useful for her research. These queries will appear in drop down menu combinations due to the way that ActiveRecord abstracts away the SQL component of interfacing with databases. The users will also be able to view the information they’ve input in order to ensure that it is error-free and consistent.
 
@@ -60,10 +57,6 @@ Once data has been entered, our client will be able to run relevant queries on t
 \item Overview page when viewed as the client will have options to create a speaker, enter phonemes for a speaker and the ability to view and query view all existing phoneme data.
 
 \item Overview page for students will only show the options to enter phonemes for a speaker and view the speaker data that they have entered previously.
-
-\item The speaker speech input page will display a paragraph that each student or the client will use as a point of reference for entering speech data.
-
-\item Speaker speech page must have references to help the students and client interpret the phoneme with specific speech accents.
 
 \item Each word will have two text boxes to be filled out, one for the phonemes from the referenced text file and the other for base phonemes.
 
@@ -77,9 +70,9 @@ Once data has been entered, our client will be able to run relevant queries on t
 
 \item The client will be able to view all speaker data that any user has input.
 
-\item Three tables will created be used to encompass authorization, speaker information and phoneme information.
+\item Three tables will created be used to encompass authentication, speaker information and phoneme information.
 
-\item There will be a link that documents how to correctly fill out the input fields.
+\item There will be a document that discusses how to correctly fill out the input fields.
 \end{enumerate}
 
 \section*{Scope}
@@ -92,7 +85,8 @@ Our client Amy Neel, Associate Professor, Dept. of Speech and Hearing Sciences, 
 \item \textbf{Users:} Users will consist of students that are assigned one or more speaker(s), and given the task of completing phoneme translations for that speaker.
 
 \item \textbf{Client:} The client, who is not considered a user, will have access to phoneme exercises, view all user data, query data, and enter speaker information. 
-\item \textbf{Exercises:} Exercises will consist of an image that displays the phoneme, a set of text that each speaker has read, an entry box for phonemes, and an entry box for mapping those phonemes to a static list of numbers from 1 to 255. Each word in the sentence will contain one box per phoneme entry, and one box for mapping. All entry boxes in the exercise must be completed and submitted in order for the exercise to be considered complete. If a speaker has omitted an entire word, there would still be commas to represent the lack of data. Commas will be used in each box as a means for identifying all required entries whether they are phonemes, blanks, or mapping numbers.
+
+\item \textbf{Exercises:} Exercises will consist of a set of text that each speaker has read, an entry box for phonemes, and an entry box for mapping those phonemes to a static list of numbers from 1 to 255. Each word in the sentence will contain one box per phoneme entry, and one box for mapping. All entry boxes in the exercise must be completed and submitted in order for the exercise to be considered complete. If a speaker has omitted an entire word, there would still be commas to represent the lack of data. Commas will be used in each box as a means for identifying all required entries whether they are phonemes, blanks, or mapping numbers.
 
 \item \textbf{Query:} The client will be able to query the data within the database which includes entry information, speaker information, and user information.
 \end{enumerate}
