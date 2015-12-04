@@ -5,7 +5,7 @@ class SearchView < ActiveRecord::Base
   def results
 
     puts @base
-    results = SearchView.where("base LIKE ? OR actual LIKE ? OR diacritic LIKE ? OR SPEAKER_ID LIKE ? OR native_language LIKE ?",
+    results = SearchView.where("base LIKE ? OR actual LIKE ? OR diacritic LIKE ? OR SPEAKER_NAME LIKE ? OR native_language LIKE ?",
                                 "#{@base}","#{@actual}", "#{@diacritic}", "#{@speaker}" , "#{@native_language}")
 
     end

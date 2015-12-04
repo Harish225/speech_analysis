@@ -25,7 +25,7 @@
       <%= text_field_tag :diacritic, params[:diacritic] %></div>
     </div>
     <div class="form-group">
-      <label class="col-xs-2">Speaker ID:</label>
+      <label class="col-xs-2">Speaker Name:</label>
       <div class="col-xs-10">
       <%= text_field_tag :speaker, params[:speaker] %></div>
     </div>
@@ -57,10 +57,13 @@
             <td><%= result.BASE %></td>
             <td><%= result.ACTUAL %></td>
             <td><%= result.DIACRITIC %></td>
-            <td><%= result.SPEAKER_ID %></td>
+            <td><%= result.SPEAKER_NAME %></td>
             <td><%= result.NATIVE_LANGUAGE %></td>
           </tr>
       <% end %>
       </tbody>
     </table>
+<% else %>
+  <br>
+  <strong>* No records found.</strong>
 <% end %>

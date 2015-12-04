@@ -88,6 +88,7 @@ class PhonemesController < ApplicationController
     if !:base.blank? or !params[:actual].blank? or !params[:diacritic].blank? or !params[:speaker].blank?  or !params[:native_language].blank?
       @results = SearchView.new(base: params[:base],actual: params[:actual],diacritic: params[:diacritic],speaker:params[:speaker],native_language: params[:native_language]).results
     end
+    puts @results.as_json
   end
 
   private
