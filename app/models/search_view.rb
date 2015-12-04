@@ -9,7 +9,7 @@ class SearchView < ActiveRecord::Base
 	@query =""
     
     if @query.eql?("") && !@diacritic.empty?
-    	@query = "diacritic LIKE \'#{@diacritic}\'"
+    	@query = "diacritic LIKE \'%#{@diacritic}%\'"
     end
     if @query.eql?("") && !@actual.empty?
     	@query = @query + "actual LIKE \'%#{@actual}%\'"
