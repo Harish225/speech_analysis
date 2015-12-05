@@ -83,6 +83,18 @@ class PhonemesController < ApplicationController
     end
   end
 
+  def query
+
+    @noinput_flag = !params[:base].nil? or !params[:actual].nil? or !params[:diacritic].nil? or !params[:speaker].nil? or !params[:native_language].nil?
+    @flag = ""
+       
+    if @noinput_flag
+      @results = SearchView.new(base: params[:base],actual: params[:actual],diacritic: params[:diacritic],speaker:params[:speaker],native_language: params[:native_language]).results
+    end
+    
+    puts @results.as_json
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_phoneme

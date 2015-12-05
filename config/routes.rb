@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :english_country_residences
   resources :native_languages
 
+  get 'phonemes/input/query' => 'phonemes#query'
+
   devise_for :users
   get 'login/index'
 
