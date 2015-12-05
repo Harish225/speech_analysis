@@ -1,5 +1,5 @@
 # Speech Analysis Group Assignment (Final Project)
-Test
+
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 Final assignment for Web Architecture and Cloud Computing class at UNM (ECE 495/595) by
