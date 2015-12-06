@@ -68,11 +68,11 @@ ActiveRecord::Schema.define(version: 20151202070745) do
   add_index "phonemes", ["speaker_id"], name: "index_phonemes_on_speaker_id"
 
   create_table "search_views", id: false, force: :cascade do |t|
-    t.string "BASE"
-    t.string "ACTUAL"
-    t.string "DIACRITIC"
-    t.string "SPEAKER_NAME"
-    t.string "NATIVE_LANGUAGE"
+    t.string "base"
+    t.string "actual"
+    t.string "diacritic"
+    t.string "speaker_name"
+    t.string "native_language"
   end
 
   create_table "speakers", force: :cascade do |t|
