@@ -70,14 +70,6 @@ class Speaker < ActiveRecord::Base
     self.english_country_residence = EnglishCountryResidence.find_or_create_by(name: name) if name.present?
   end
 
-  def self.to_csv(options = {})
-    CSV.generate(options) do |csv|
-      csv << column_names
-      all.each do |speaker|
-        csv << speaker.attributes.values_at(*column_names)
-      end
-    end
-  end
 
 end
 

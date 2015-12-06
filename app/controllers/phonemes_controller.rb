@@ -94,13 +94,6 @@ class PhonemesController < ApplicationController
     
     puts @results.as_json
 
-    @prints = @results
-    respond_to do |format|
-      format.html
-      format.csv { send_data @results.to_csv }
-      format.xls  { send_data @results.to_csv(col_sep: "\t")}
-    end
-
   end
 
   private
