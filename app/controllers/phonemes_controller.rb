@@ -15,7 +15,7 @@ class PhonemesController < ApplicationController
   # GET /phonemes/new
   def new
     @phoneme       = Phoneme.new
-    @phoneme_array = create_phoneme_array(2)
+    @phoneme_array = create_phoneme_array(1)
   end
 
   # GET /phonemes/1/edit
@@ -45,7 +45,7 @@ class PhonemesController < ApplicationController
       redirect_to phonemes_path
     else
       flash[:danger] = 'There was a problem creating the Phoneme.'
-      @phoneme_array = create_phoneme_array(2)
+      @phoneme_array = create_phoneme_array(1)
       respond_to do |format|
         format.html { render :new }
         format.json { render json: @phoneme.errors, status: :unprocessable_entity }
