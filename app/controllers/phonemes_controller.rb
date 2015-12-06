@@ -1,10 +1,10 @@
 class PhonemesController < ApplicationController
   before_action :set_phoneme, only: [:show, :edit, :update, :destroy]
+
   # GET /phonemes
   # GET /phonemes.json
   def index
     @phonemes = Phoneme.all
-
   end
 
   # GET /phonemes/1
@@ -87,13 +87,12 @@ class PhonemesController < ApplicationController
 
     @noinput_flag = !params[:base].nil? or !params[:actual].nil? or !params[:diacritic].nil? or !params[:speaker].nil? or !params[:native_language].nil?
     @flag = ""
-       
+
     if @noinput_flag
       @results = SearchView.new(base: params[:base],actual: params[:actual],diacritic: params[:diacritic],speaker:params[:speaker],native_language: params[:native_language]).results
     end
-    
-    puts @results.as_json
 
+    puts @results.as_json
   end
 
   private
