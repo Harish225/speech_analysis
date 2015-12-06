@@ -1,36 +1,35 @@
 <h1>Editing Phoneme</h1>
 
 <%= form_for @phoneme do |f| %>
-  <% if @phoneme.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@phoneme.errors.count, "error") %> prohibited this speaker from being saved:</h2>
+    <% if @phoneme.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@phoneme.errors.count, "error") %> prohibited this speaker from being saved:</h2>
 
-      <ul>
-        <% @phoneme.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+          <ul>
+            <% @phoneme.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="form-inputs">
+      <%= f.label :speaker %> <br>
+      <%= f.collection_select :speaker_id, Speaker.order(:name), :id, :name %>
     </div>
-  <% end %>
-  <div class="form-inputs">
-    <%= f.label :speaker %> <br>
-    <%= f.collection_select :speaker_id, Speaker.order(:name), :id, :name %>
-  </div>
 
-  <div class="form-inputs">
-    <%= f.label :base %> <br>
-    <%= f.text_field :base, required: true, input_html: {class: "form-control"} %> <br>
-    <%= f.label :actual %> <br>
-    <%= f.text_field :actual, required: true, input_html: {class: "form-control"} %> <br>
-    <%= f.label :sequence %> <br>
-    <%= f.text_field :sequence, required: true, input_html: {class: "form-control"} %> <br>
-  </div>
+    <div class="form-inputs">
+      <%= f.label :base %> <br>
+      <%= f.text_field :base, required: true, input_html: {class: "form-control"} %> <br>
+      <%= f.label :actual %> <br>
+      <%= f.text_field :actual, required: true, input_html: {class: "form-control"} %> <br>
+      <%= f.label :sequence %> <br>
+      <%= f.text_field :sequence, required: true, input_html: {class: "form-control"} %> <br>
+    </div>
 
-  <div class="actions form-group">
-    <%= f.submit %>
-  </div>
+    <div class="actions form-group">
+      <%= f.submit %>
+    </div>
 <% end %>
 
-<%= link_to 'Show', @phoneme, class: 'btn btn-primary btn-xs' %> |
-<%= link_to 'Back', phonemes_path, class: 'btn
-        btn-danger btn-xs' %>
+<%= link_to 'Show', @phoneme, class: 'action-button' %> |
+<%= link_to 'Back', phonemes_path, class: 'action-button' %>

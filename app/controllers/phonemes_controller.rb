@@ -1,10 +1,10 @@
 class PhonemesController < ApplicationController
   before_action :set_phoneme, only: [:show, :edit, :update, :destroy]
-
   # GET /phonemes
   # GET /phonemes.json
   def index
     @phonemes = Phoneme.all
+
   end
 
   # GET /phonemes/1
@@ -93,6 +93,14 @@ class PhonemesController < ApplicationController
     end
     
     puts @results.as_json
+
+    @prints = @results
+    respond_to do |format|
+      format.html
+      format.csv { send_data @results.to_csv }
+      format.xls  { send_data @results.to_csv(col_sep: "\t")}
+    end
+
   end
 
   private
