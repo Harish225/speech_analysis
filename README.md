@@ -45,7 +45,7 @@ Please fork and do a pull request when you've created a feature that you want to
 - [x] Gantt Chart - Due: Nov 12
 - [x] Initial prototype - Due: Nov 17
 - [x] Prototype 2 - Due: Nov 24
-- [] Prototype 3 - Due: Dec 1
+- [x] Prototype 3 - Due: Dec 1
 - [] Final Presentation - Due: Dec 8-10
 
 #### Jayson:
@@ -63,8 +63,6 @@ Please fork and do a pull request when you've created a feature that you want to
 - [x] Determine way to create new options to add to drop down boxes (ex. state, country, etc.)
 - [x] Ensure Speaker is associated with a user
 - [x] Ensure Phoneme is associated with a speaker
-- [x] Ensure no TODO's remain in code comments
-- [] Remove unnecessary components to project
 - [x] Push product to Heroku
 - [x] Assist Amber in adding phonemes to seed data 
 - [x] Create form for Phonemes
@@ -74,21 +72,25 @@ Please fork and do a pull request when you've created a feature that you want to
 - [x] Implement functionality in edit for validations and parsing for Phonemes
 - [x] Add ability to instantiate multiple objects of phoneme and submit to db
 - [x] Fix edit form to work with new controller code
-- [] Add speaker dropdown back in for new view
-- [] Create custom validations for comma checks on view
+- [x] Add speaker dropdown back in for new view
+- [x] Create custom validations for comma checks on view
+- [x] Add ability to instantiate multiple objects of phoneme and submit to db
+- [] Remove unnecessary components to project
+- [] Ensure no TODO's remain in code comments
 
 #### Amber:
 - [x] Help build initial prototype for seed data
-- [] Add ability to instantiate multiple objects of phoneme and submit to db
+- [x] Add ability to instantiate multiple objects of phoneme and submit to db
 - [] Presentation
 
 #### Jeffrey:
-- [] Ensure input file is being displayed properly - Due Nov 20 - 21st at the latest
-- [] Ensure aesthetics of page are good
-- [] Create nice page for login/signup - see https://stark-woodland-7238.herokuapp.com/ for contextual example
+- [x] Ensure input file is being displayed properly - Due Nov 20 - 21st at the latest
+- [x] Ensure aesthetics of page are good
+- [x] Create nice page for login/signup - see https://stark-woodland-7238.herokuapp.com/ for contextual example
+- [x] Add ability to instantiate multiple objects of phoneme and submit to db
 
 #### Nicole:
-- [] Help subgroups with understanding their roles
+- [x] Help subgroups with understanding their roles
 - [] Presentation
 - [] QA on web application
 - [] Create instructions for the students
@@ -98,12 +100,8 @@ Please fork and do a pull request when you've created a feature that you want to
 - [x] Steal UNM favicon
 - [x] Supplement Replace Speech App in upper left corner with UNM logo
 - [x] Redirect from logo 
-- [] Implement query functionality
-- [] Create query page
-- [] Implement concept of administrative account
-- [] Implement logic to separate views for different users
-
-#### Meghana:
+- [x] Implement query functionality
+- [x] Create query page
 
 #### Future Work (May not be encompassed in assignment):
 - [] Ensure only users that client allows can sign up for speech app

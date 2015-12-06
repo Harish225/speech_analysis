@@ -48,6 +48,7 @@
 
 <% @phoneme_array.each do |phoneme| %>
     <%= fields_for 'phonemes[]', phoneme do |p| %>
+        <!-- TODO: Change this from 0..1 to 0..22 ->
         <% for i in 0..1 %>
             <%= field_set_tag do %>
                 <h2 class="fs-title">Word Data</h2>
@@ -74,6 +75,7 @@
                 <%if i < 22 %>
                     <input type="button" name="next" class="next action-button" value="Next" />
                 <% end %>
+                <!-- TODO: Change this from i == 1 to i == 22 ->
                 <%if i == 1 %>
                     <button id = "myBtn" class="submit action-button">Submit</button>
                 <%end%>
