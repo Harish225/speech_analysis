@@ -48,7 +48,7 @@
 
 <% @phoneme_array.each do |phoneme| %>
     <%= fields_for 'phonemes[]', phoneme do |p| %>
-        <% for i in 0..1 %>
+        <% for i in 0..0 %>
             <%= field_set_tag do %>
                 <h2 class="fs-title">Word Data</h2>
                 <h3 class="fs-subtitle">Input Required Phoneme and Base Data</h3>
@@ -76,13 +76,13 @@
                 <% end %>
                 <%if i == 1 %>
                     <button id = "myBtn" class="submit action-button">Submit</button>
-                <% end %>
-            <% end %>
+                <%end%>
+            <%end%>
 
-        <% end %>
+        <%end%>
 
 
-    <% end %>
-<% end %>
+    <% end%>
+<%end%>
 
 <% end %>
