@@ -1,14 +1,17 @@
-<ul class="nav nav-tabs" role="tablist">
-  <li><%= link_to 'View Phoneme Data', phonemes_path %></li>
-  <li><%= link_to 'Enter Phoneme Data', new_phoneme_path %></li>
-  <li><%= link_to 'View Speakers', speakers_path %></li>
-  <li class="active"><%= link_to 'Create Speaker', new_speaker_path %></li>
-  <li><%= link_to 'Query Data', phonemes_input_query_path %></li>
-</ul>
+<%= stylesheet_link_tag "header" %>
+
+
+
+<form id = "header">
+  <ul>
+    <li><%= link_to 'View Phoneme Data', phonemes_path %></li>
+    <li><%= link_to 'Enter Phoneme Data', new_phoneme_path %></li>
+    <li><%= link_to 'View Speakers', speakers_path %></li>
+    <li class="active"><%= link_to 'Create Speaker', new_speaker_path %></li>
+    <li><%= link_to 'Query Data', phonemes_input_query_path %></li>
+  </ul>
+</form>
+<br>
 <h1>New Speaker</h1>
 
 <%= render 'form' %>
-
-<%= link_to speakers_path, class: "btn btn-danger btn-xs" do %>
-  <i class="glyphicon glyphicon-arrow-left">Speakers</i>
-<% end %>

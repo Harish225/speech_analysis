@@ -43,6 +43,7 @@ group :development do
     gem 'sqlite3'
 end
 
+gem "bootstrap-sass-rails", "~> 2.2.2.0"
 # Used for authentication
 gem 'devise'
 # Used for HAML

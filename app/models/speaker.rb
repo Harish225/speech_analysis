@@ -69,4 +69,9 @@ class Speaker < ActiveRecord::Base
   def english_country_residence_name=(name)
     self.english_country_residence = EnglishCountryResidence.find_or_create_by(name: name) if name.present?
   end
+
+
 end
+
+
+

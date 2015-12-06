@@ -34,6 +34,7 @@ class SpeakersController < ApplicationController
       @english_country_residence = EnglishCountryResidence.name_like("%#{params[:search]}%").order('name')
     else
     end
+
   end
 
   # GET /speakers/1

@@ -15,7 +15,7 @@ class PhonemesController < ApplicationController
   # GET /phonemes/new
   def new
     @phoneme       = Phoneme.new
-    @phoneme_array = create_phoneme_array(2)
+    @phoneme_array = create_phoneme_array(1)
   end
 
   # GET /phonemes/1/edit
@@ -45,7 +45,7 @@ class PhonemesController < ApplicationController
       redirect_to phonemes_path
     else
       flash[:danger] = 'There was a problem creating the Phoneme.'
-      @phoneme_array = create_phoneme_array(2)
+      @phoneme_array = create_phoneme_array(1)
       respond_to do |format|
         format.html { render :new }
         format.json { render json: @phoneme.errors, status: :unprocessable_entity }
@@ -87,11 +87,11 @@ class PhonemesController < ApplicationController
 
     @noinput_flag = !params[:base].nil? or !params[:actual].nil? or !params[:diacritic].nil? or !params[:speaker].nil? or !params[:native_language].nil?
     @flag = ""
-       
+
     if @noinput_flag
       @results = SearchView.new(base: params[:base],actual: params[:actual],diacritic: params[:diacritic],speaker:params[:speaker],native_language: params[:native_language]).results
     end
-    
+
     puts @results.as_json
   end
 
