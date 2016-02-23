@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Base:</strong>
+  <%= @phoneme.base %>
+</p>
+
+<p>
+  <strong>Actual:</strong>
+  <%= @phoneme.actual %>
+</p>
+
+<p>
+  <strong>Diacritic:</strong>
+  <%= @phoneme.diacritic %>
+</p>
+
+<p>
+  <strong>Sequence:</strong>
+  <%= @phoneme.sequence %>
+</p>
+
+<p>
+  <strong>Speaker:</strong>
+  <%= @phoneme.speaker.name %>
+</p>
+
+<%= link_to 'Edit', edit_phoneme_path(@phoneme), class: 'action-button' %> |
+<%= link_to 'Back', phonemes_path, class: 'action-button' %>

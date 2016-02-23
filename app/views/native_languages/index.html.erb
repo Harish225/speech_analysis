@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Native Languages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @native_languages.each do |native_language| %>
+      <tr>
+        <td><%= native_language.name %></td>
+        <td><%= link_to 'Show', native_language %></td>
+        <td><%= link_to 'Edit', edit_native_language_path(native_language) %></td>
+        <td><%= link_to 'Destroy', native_language, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Native language', new_native_language_path %>

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  city_id: 
+  state_id: 
+  country_id: 
+  native_language_id: 
+  other_languages: 1
+  age: 1
+  gender: 1
+  english_onset: 1
+  learning_method: 1
+  english_country_residence_id: 
+  length_english_residence: 1
+  user_id: 
+
+two:
+  name: MyString
+  city_id: 
+  state_id: 
+  country_id: 
+  native_language_id: 
+  other_languages: 1
+  age: 1
+  gender: 1
+  english_onset: 1
+  learning_method: 1
+  english_country_residence_id: 
+  length_english_residence: 1
+  user_id: 

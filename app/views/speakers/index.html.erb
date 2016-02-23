@@ -1,0 +1,60 @@
+<%= stylesheet_link_tag "header" %>
+
+
+
+<form id = "header">
+  <ul>
+    <li><%= link_to 'View Phoneme Data', phonemes_path %></li>
+    <li><%= link_to 'Enter Phoneme Data', new_phoneme_path %></li>
+    <li class="active"><%= link_to 'View Speakers', speakers_path %></li>
+    <li><%= link_to 'Create Speaker', new_speaker_path %></li>
+    <li><%= link_to 'Query Data', phonemes_input_query_path %></li>
+  </ul>
+</form>
+
+<br>
+<h1>Listing Speakers</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Native language</th>
+    <th>Other languages</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>English onset</th>
+    <th>Learning method</th>
+    <th>English country residence</th>
+    <th>Length english residence</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @speakers.each do |speaker| %>
+      <tr>
+        <td><%= speaker.name %></td>
+        <td><%= speaker.city.name %></td>
+        <td><%= speaker.state.name if !speaker.state.nil? %></td>
+        <td><%= speaker.country.name %></td>
+        <td><%= speaker.native_language.name %></td>
+        <td><%= speaker.other_languages %></td>
+        <td><%= speaker.age %></td>
+        <td><%= speaker.gender %></td>
+        <td><%= speaker.english_onset %></td>
+        <td><%= speaker.learning_method %></td>
+        <td><%= speaker.english_country_residence.name if !speaker.english_country_residence.nil? %></td>
+        <td><%= speaker.length_english_residence %></td>
+        <td><%= link_to 'Show', speaker, class: 'action-button' %></td>
+        <td><%= link_to 'Edit', edit_speaker_path(speaker), class:  'action-button' %></td>
+        <td><%= link_to 'Delete', speaker, method: :delete, data: { confirm: 'Are you sure?' }, class: 'action-button' %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @speaker.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @speaker.city.name %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @speaker.state.name if !@speaker.state.nil? %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @speaker.country.name %>
+</p>
+
+<p>
+  <strong>Native language:</strong>
+  <%= @speaker.native_language.name %>
+</p>
+
+<p>
+  <strong>Other languages:</strong>
+  <%= @speaker.other_languages %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @speaker.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @speaker.gender %>
+</p>
+
+<p>
+  <strong>English onset:</strong>
+  <%= @speaker.english_onset %>
+</p>
+
+<p>
+  <strong>Learning method:</strong>
+  <%= @speaker.learning_method %>
+</p>
+
+<p>
+  <strong>English country residence:</strong>
+  <%= @speaker.english_country_residence.name if !@speaker.english_country_residence.nil? %>
+</p>
+
+<p>
+  <strong>Length english residence:</strong>
+  <%= @speaker.length_english_residence %>
+</p>
+
+<%= link_to 'Edit', edit_speaker_path(@speaker), class: 'action-button' %> |
+<%= link_to 'Back', speakers_path, class: 'action-button' %>

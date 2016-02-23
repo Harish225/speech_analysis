@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing English Country Residences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @english_country_residences.each do |english_country_residence| %>
+      <tr>
+        <td><%= english_country_residence.name %></td>
+        <td><%= link_to 'Show', english_country_residence %></td>
+        <td><%= link_to 'Edit', edit_english_country_residence_path(english_country_residence) %></td>
+        <td><%= link_to 'Destroy', english_country_residence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New English country residence', new_english_country_residence_path %>

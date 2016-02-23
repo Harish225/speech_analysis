@@ -1,0 +1,76 @@
+<form id = "header">
+  <ul>
+    <li><%= link_to 'View Phoneme Data', phonemes_path %></li>
+    <li><%= link_to 'Enter Phoneme Data', new_phoneme_path %></li>
+    <li><%= link_to 'View Speakers', speakers_path %></li>
+    <li><%= link_to 'Create Speaker', new_speaker_path %></li>
+    <li class="active"><%= link_to 'Query Data', phonemes_input_query_path %></li>
+  </ul>
+</form>
+
+<br>
+<h1>New Query</h1>
+
+
+<%= form_for phonemes_input_query_path, :html => {:class => 'form-horizontal'}, :method => 'get' do %>
+
+    <div class="form-group">
+      <label class="col-xs-2">Base:</label>
+      <div class="col-xs-10"><%= text_field_tag :base, params[:base] %></div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-2">Actual:</label>
+      <div class="col-xs-10"><%= text_field_tag :actual, params[:actual] %></div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-2">Diacritic:</label>
+      <div class="col-xs-10">
+      <%= text_field_tag :diacritic, params[:diacritic] %></div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-2">Speaker Name:</label>
+      <div class="col-xs-10">
+      <%= text_field_tag :speaker, params[:speaker] %></div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-2">Native Language:</label>
+      <div class="col-xs-10">
+      <%= text_field_tag :native_language, params[:native_language] %></div>
+    </div>
+      <p><div class="actions"><%= submit_tag "Search", :name => nil, class: 'action-button' %></div></p>
+
+
+<% end %>
+
+
+<% if @results.present? %>
+
+
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Base</th>
+        <th>Actual</th>
+        <th>Diacritic</th>
+        <th>Speaker</th>
+        <th>Native Language</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @results.each do |result| %>
+          <tr>
+            <td><%= result.base1 %></td>
+            <td><%= result.actual1 %></td>
+            <td><%= result.diacritic1 %></td>
+            <td><%= result.speakername %></td>
+            <td><%= result.nativelanguage %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>
+<% if !@results.present? && @flag == "n" %>
+    <strong>* No records found.</strong>
+<% end %>

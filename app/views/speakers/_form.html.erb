@@ -1,0 +1,81 @@
+<%= form_for(@speaker) do |f| %>
+  <% if @speaker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@speaker.errors.count, "error") %> prohibited this speaker from being saved:</h2>
+
+      <ul>
+        <% @speaker.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-inputs">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, required: true, input_html: {class: 'form-control'} %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :city_name %><br>
+    <%= f.autocomplete_field :city_name, speakers_autocomplete_city_name_path, required: true %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :state_name %><br>
+    <%= f.autocomplete_field :state_name, speakers_autocomplete_state_name_path %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :country_name %><br>
+    <%= f.autocomplete_field :country_name, speakers_autocomplete_country_name_path, required: true %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :native_language_name %><br>
+    <%= f.autocomplete_field :native_language_name, speakers_autocomplete_native_language_name_path, required: true %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label '# Other Languages Known' %><br>
+    <%= f.number_field :other_languages, required: true, input_html: {class: 'form-control'} %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label 'Age' %><br>
+    <%= f.number_field :age, required: true, input_html: {class: 'form-control'} %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :gender %> <br>
+    <%= f.select :gender, options_for_select(Speaker.genders.keys.to_a), require: true, input_html: {class:
+                                                                                                             "form-control"} %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label 'English Onset' %><br>
+    <%= f.number_field :english_onset, required: true, input_html: {class: 'form-control'} %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :learning_method %> <br>
+    <%= f.select :learning_method, options_for_select(Speaker.learning_methods.keys.to_a), require: true, input_html:
+                                                                                                    {class:
+                                                                                                             "form-control"} %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :english_country_residence_name %><br>
+    <%= f.autocomplete_field :english_country_residence_name,
+                             speakers_autocomplete_english_country_residence_name_path %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label 'Length English Residence' %><br>
+    <%= f.number_field :length_english_residence, required: true, input_html: {class: 'form-control'} %>
+  </div>
+
+  <div class="actions form-group">
+    <%= f.submit 'Update Speaker', class: 'action-button' %>
+  </div>
+<% end %>
