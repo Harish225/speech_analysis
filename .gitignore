@@ -63,9 +63,6 @@ pickle-email-*.html
 bower.json
 
 .powenv
-<<<<<<< HEAD
 public/uploads
 tmp
 logs
-=======
->>>>>>> upstream/master
