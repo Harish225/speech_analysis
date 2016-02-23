@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
-<<<<<<< HEAD
 ruby '2.1.5'
-
->>>>>>> upstream/master
 
 # Used for autocomplete
 gem 'rails4-autocomplete'
