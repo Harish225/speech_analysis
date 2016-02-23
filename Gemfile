@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 <<<<<<< HEAD
 ruby '2.1.5'
-=======
-ruby '2.2.3'
+
 >>>>>>> upstream/master
 
 # Used for autocomplete
