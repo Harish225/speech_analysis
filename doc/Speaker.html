@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Speaker - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-city_name">#city_name</a>
+    
+    <li ><a href="#method-i-city_name-3D">#city_name=</a>
+    
+    <li ><a href="#method-i-country_name">#country_name</a>
+    
+    <li ><a href="#method-i-country_name-3D">#country_name=</a>
+    
+    <li ><a href="#method-i-english_country_residence_name">#english_country_residence_name</a>
+    
+    <li ><a href="#method-i-english_country_residence_name-3D">#english_country_residence_name=</a>
+    
+    <li ><a href="#method-i-native_language_name">#native_language_name</a>
+    
+    <li ><a href="#method-i-native_language_name-3D">#native_language_name=</a>
+    
+    <li ><a href="#method-i-state_name">#state_name</a>
+    
+    <li ><a href="#method-i-state_name-3D">#state_name=</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Speaker">
+  <h1 id="class-Speaker" class="class">
+    class Speaker
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="LEARNING_METHODS">LEARNING_METHODS
+        
+        <dd>
+        
+      
+        <dt id="SPEAKER_GENDERS">SPEAKER_GENDERS
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-city_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">city_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="City.html">City</a> getter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="city_name-source">
+            <pre><span class="ruby-comment"># File app/models/speaker.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">city_name</span>
+  <span class="ruby-identifier">city</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-city_name-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">city_name=</span><span
+            class="method-args">(name)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="City.html">City</a> setter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="city_name-3D-source">
+            <pre><span class="ruby-comment"># File app/models/speaker.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">city_name=</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">city</span> = <span class="ruby-constant">City</span>.<span class="ruby-identifier">find_or_create_by</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">name</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">present?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-country_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">country_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Country.html">Country</a> getter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="country_name-source">
+            <pre><span class="ruby-comment"># File app/models/speaker.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">country_name</span>
+  <span class="ruby-identifier">country</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-country_name-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">country_name=</span><span
+            class="method-args">(name)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Country.html">Country</a> setter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="country_name-3D-source">
+            <pre><span class="ruby-comment"># File app/models/speaker.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">country_name=</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">country</span> = <span class="ruby-constant">Country</span>.<span class="ruby-identifier">find_or_create_by</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">name</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">present?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-english_country_residence_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">english_country_residence_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>English <a href="Country.html">Country</a> Residence getter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="english_country_residence_name-source">
+            <pre><span class="ruby-comment"># File app/models/speaker.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">english_country_residence_name</span>
+  <span class="ruby-identifier">english_country_residence</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-english_country_residence_name-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">english_country_residence_name=</span><span
+            class="method-args">(name)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>English <a href="Country.html">Country</a> Residence setter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="english_country_residence_name-3D-source">
+            <pre><span class="ruby-comment"># File app/models/speaker.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">english_country_residence_name=</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">english_country_residence</span> = <span class="ruby-constant">EnglishCountryResidence</span>.<span class="ruby-identifier">find_or_create_by</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">name</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">present?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-native_language_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">native_language_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Native Language getter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="native_language_name-source">
+            <pre><span class="ruby-comment"># File app/models/speaker.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">native_language_name</span>
+  <span class="ruby-identifier">native_language</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-native_language_name-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">native_language_name=</span><span
+            class="method-args">(name)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Native Language setter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="native_language_name-3D-source">
+            <pre><span class="ruby-comment"># File app/models/speaker.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">native_language_name=</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">native_language</span> = <span class="ruby-constant">NativeLanguage</span>.<span class="ruby-identifier">find_or_create_by</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">name</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">present?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-state_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">state_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="State.html">State</a> getter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="state_name-source">
+            <pre><span class="ruby-comment"># File app/models/speaker.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">state_name</span>
+  <span class="ruby-identifier">state</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-state_name-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">state_name=</span><span
+            class="method-args">(name)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="State.html">State</a> setter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="state_name-3D-source">
+            <pre><span class="ruby-comment"># File app/models/speaker.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">state_name=</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">state</span> = <span class="ruby-constant">State</span>.<span class="ruby-identifier">find_or_create_by</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">name</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">present?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
