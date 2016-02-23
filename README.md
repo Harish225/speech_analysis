@@ -1,4 +1,4 @@
-# Speech Analysis Group Assignment (Final Project)
+# Speech Analysis - Ruby on Rails Web Application
 
 ## Heroku Site
 The heroku site can be found at: https://floating-fjord-4597.herokuapp.com/  
